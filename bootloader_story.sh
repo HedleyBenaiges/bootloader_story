@@ -13,12 +13,12 @@ MESSAGE_DIRECTORY="/usr/local/share/stories/"
 message_file=$(ls /usr/local/share/stories | sort -R | tail -n 1)
 message="${MESSAGE_DIRECTORY}${message_file}"
 
-# Clear screen for a clean look
-# echo -e "\e[H\e[2J" 
-
 # Sleep to allow it to start at the start
 # Pretty shoddy programming but shush
 sleep 10
+
+# Clear screen for a clean look
+echo -e "\e[H\e[2J" 
 
 if [ -f "$message" ]; then
     while IFS= read -r line; do
