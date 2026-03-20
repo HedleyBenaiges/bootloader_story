@@ -11,4 +11,4 @@ A systemd service will run before the login manager
 Inputs of `^C` are captured and ignored.
 
 ## Emergency bypass
-Currently it only runs on one TTY 
+The service does not run on tty6. You can bypass the service with `CTRL+ALT+F6` and entering the command `sudo systemctl stop bootloader_story@tty1.service`
