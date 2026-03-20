@@ -10,11 +10,8 @@ tput civis
 trap 'stty echo; tput cnorm; exit' EXIT
 
 MESSAGE_DIRECTORY="/usr/local/share/stories/"
-echo $MESSAGE_DIRECTORY
 message_file=$(ls /usr/local/share/stories | sort -R | tail -n 1)
-echo $message_file
 message="${MESSAGE_DIRECTORY}${message_file}"
-echo $message
 
 # Clear screen for a clean look
 # echo -e "\e[H\e[2J" 
