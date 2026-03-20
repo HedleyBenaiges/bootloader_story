@@ -1,10 +1,10 @@
 #!/bin/bash
 # Ignore Ctrl+C (SIGINT)
-#trap '' INT
+trap '' INT
 # Stop echoing keystrokes
-#stty -echo
+stty -echo
 # Hide cursor
-#tput civis
+tput civis
 
 # Ensure that echo is restored even if crash
 trap 'stty echo; tput cnorm; exit' EXIT
