@@ -1,17 +1,17 @@
 #!/bin/bash
 # Ignore Ctrl+C (SIGINT)
-trap '' INT
+#trap '' INT
 # Stop echoing keystrokes
-stty -echo
+#stty -echo
 # Hide cursor
-tput civis
+#tput civis
 
 # Ensure that echo is restored even if crash
 trap 'stty echo; tput cnorm; exit' EXIT
 
 MESSAGE_DIRECTORY="/usr/local/share/stories/"
-message_file = ls ~/.config/scripts/bootloader_story/stories | sort -R | tail -$N
-MESSAGE = "${MESSAGE_DIRECTORY}/${message_file}"
+message_file=$(ls ~/.config/scripts/bootloader_story/stories | sort -R | tail -$N)
+message="${MESSAGE_DIRECTORY}${message_file}"
 
 # Clear screen for a clean look
 # echo -e "\e[H\e[2J" 
@@ -20,7 +20,7 @@ MESSAGE = "${MESSAGE_DIRECTORY}/${message_file}"
 # Pretty shoddy programming but shush
 sleep 10
 
-if [ -f "$MESSAGE_FILE" ]; then
+if [ -f "$message" ]; then
     while IFS= read -r line; do
         # Print line in bright green (Terminal style)
         echo -e "\e[32m$line\e[0m"
@@ -30,7 +30,7 @@ if [ -f "$MESSAGE_FILE" ]; then
         # PAUSE=$(awk -v min=0.2 -v max=3.0 'BEGIN{srand(); print min+rand()*(max-min)}')
         # sleep "$PAUSE"
 	sleep 3
-    done < "$MESSAGE_FILE"
+    done < "$message"
 fi
 
 sleep 3
