@@ -6,5 +6,7 @@ sudo cp bootloader_story.sh /usr/local/bin/
 sudo cp bootloader_story@.service /etc/systemd/system/
 sudo systemctl daemon-reload
 
-# Can do to all TTYs
-sudo systemctl enable bootloader_story@tty1.service
+# Enable for the first 5 standard TTYs
+for i in {1..5}; do
+  sudo systemctl enable "bootloader_story@tty${i}.service"
+done
