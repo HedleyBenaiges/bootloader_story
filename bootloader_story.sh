@@ -10,7 +10,7 @@ tput civis
 trap 'stty echo; tput cnorm; exit' EXIT
 
 MESSAGE_DIRECTORY="/usr/local/share/stories/"
-message_file=$(ls ~/.config/scripts/bootloader_story/stories | sort -R | tail -$N)
+message_file=$(ls /usr/local/share/stories | sort -R | tail -$N)
 message="${MESSAGE_DIRECTORY}${message_file}"
 
 # Clear screen for a clean look
