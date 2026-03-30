@@ -29,7 +29,7 @@ if [ -f "$message" ]; then
         # Then divide by 10 to get 0.2 to 3.0
         # PAUSE=$(awk -v min=0.2 -v max=3.0 'BEGIN{srand(); print min+rand()*(max-min)}')
         # sleep "$PAUSE"
-	sleep 3
+	sleep 2
     done < "$message"
 fi
 
